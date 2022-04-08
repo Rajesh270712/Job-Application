@@ -1,0 +1,58 @@
+#navbar{
+    background-color: teal;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.tl{
+ color: teal;
+}
+#navbar>a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 22px;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+#form>input,select{
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid ;
+    font-size: 18px;
+}
+#sortbyname{
+    margin: 20px 30% 10px;
+}
+#navbar+h2{
+    font-size: 36px;
+    text-align: center;
+    color: blue;
+}
+input[type="submit"]{
+    background-color: blue;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+table{
+    
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+th,td{
+    font-size: 18px;
+    border: 1.6px solid black;
+    padding: 5px;
+    text-align: left;
+}
+th{
+    background-color: teal;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

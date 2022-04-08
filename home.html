@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applied</title>
+</head>
+<link rel="stylesheet" href="./home.css">
+
+<body>
+    <div id="navbar">
+        <a id="tl" href="./home.html">Home</a>
+        <a href="./jobApplied.html">Job Applied</a>
+        <a href="./Bookmark.html">Bookmark</a>
+    </div>
+
+    <h2>Enter Your Job Details</h2>
+    <form id="form" action="">
+        <input type="text" placeholder="Enter Name" id="name">
+        <input type="email" placeholder="Enter Email" id="email">
+        <select name="role" id="role">
+            <option value="FSD">FSD</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+        </select>
+        <input id="salary" type="number" placeholder="Expected Salary">
+        <input type="submit" >
+    </form>
+</body>
+<script>
+    document.querySelector("#form").addEventListener("submit",addJob);
+    var jobApplied=JSON.parse(localStorage.getItem("jobApplied")) || [];
+    function addJob(){
+        event.preventDefault();
+
+        var job={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            role:document.querySelector("#role").value,
+            salary:document.querySelector("#salary").value,
+
+        }
+        jobApplied.push(job);
+        localStorage.setItem("jobApplied",JSON.stringify(jobApplied));
+        alert("Job Applied Successfully")
+    }
+</script>
+</html>

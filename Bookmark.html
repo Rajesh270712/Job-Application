@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="./home.css">
+
+</head>
+<body>
+    <div id="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./jobApplied.html">Job Applied</a>
+        <a href="./Bookmark.html">Bookmark</a>
+    </div>
+   
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Bookmark</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+
+    <script>
+        var bookmark=JSON.parse(localStorage.getItem("bookmark"));
+
+function showJob(jobAppl,job){
+    jobAppl.forEach(job=>{
+        var row=document.createElement("tr");
+
+        var td1=document.createElement("td");
+        td1.innerText=job.name;
+        var td2=document.createElement("td");
+        td2.innerText=job.email;
+        var td3=document.createElement("td");
+        td3.innerText=job.role;
+        var td4=document.createElement("td");
+        td4.innerText=job.salary;
+
+        var td5=document.createElement("td");
+        td5.innerText="Delete";
+        td5.style.color="blue"
+        td5.style.cursor="pointer"
+        td5.addEventListener("click",function(){
+            bookmark.splice(job,1)
+            localStorage.setItem("bookmark",JSON.stringify(bookmark))
+            window.location.reload();
+        })
+
+        row.append(td1,td2,td3,td4,td5);
+
+        document.querySelector("#tbody").append(row)
+        
+    });
+
+
+}
+
+window.addEventListener("load",(event)=>{
+    showJob(bookmark)
+})
+
+
+    </script>
+</html>
